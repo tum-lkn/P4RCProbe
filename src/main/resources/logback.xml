@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+        ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>[%d{YYYY/MM/dd HH:mm:ss:SSS}][%thread][%-5level][%logger{5}]: %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="SWITCH-STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoders are assigned the type
+        ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+            <pattern>[%d{YYYY/MM/dd HH:mm:ss:SSS}][%thread][%-5level][%logger{5}]%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <append>false</append>
+        <file>MyLog.log</file>
+        <encoder>
+            <Pattern>[%d{YYYY/MM/dd HH:mm:ss:SSS}][%thread][%-5level][%logger{5}]: %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="p4rcprobe.vswitch" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <logger name="p4rcprobe.vswitch.main.config" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <logger name="p4rcprobe.vswitch.connection" level="INFO" additivity="false">
+        <appender-ref ref="SWITCH-STDOUT" />
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <logger name="p4rcprobe.vswitch.connection.OFStatsHandler" level="INFO" additivity="false">
+        <appender-ref ref="SWITCH-STDOUT" />
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <logger name="p4rcprobe.vswitch.connection.flowtable" level="INFO" additivity="false">
+        <appender-ref ref="SWITCH-STDOUT" />
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <logger name="p4rcprobe.vswitch.statistics" level="INFO" additivity="false">
+        <appender-ref ref="SWITCH-STDOUT" />
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <logger name="p4rcprobe.vswitch.statistics.PacketsPerSecond" level="INFO" additivity="false">
+        <appender-ref ref="SWITCH-STDOUT" />
+        <appender-ref ref="FILE" />
+    </logger>
+
+    <logger name="p4rcprobe.vswitch.trafficgen" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </logger>
+
+
+    <!-- Strictly speaking, the level attribute is not necessary since -->
+    <!-- the level of the root level is set to DEBUG by default.       -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="FILE" />
+    </root>
+
+</configuration>
