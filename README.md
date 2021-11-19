@@ -32,9 +32,8 @@ Video Presentation: https://www.youtube.com/watch?v=B0OUKnEVhDs
 - Download and install Maven
 - Make sure that your Maven setup allows new repositories
 - Execute `mvn package` to download dependencies and compile OFCProbe.
-- The result can be found in `target/p4rcprobe-*.one-jar.jar`.
 - Command: `java -jar target/p4rcprobe-*.one-jar.jar demo.ini`
-
+- The result can be found in `target/p4rcprobe-*.one-jar.jar`.
 
 ### <a name="randomdistri"></a>Random IAT Values after Distribution
 
