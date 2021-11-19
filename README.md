@@ -22,6 +22,7 @@ Video Presentation: https://www.youtube.com/watch?v=B0OUKnEVhDs
 ### <a name="req"></a>Requirements:
 
 - Java 7
+- Curl
 - OpenFlow or P4Runtime (tested for ONOS) Controller
 - Preferably a Linux System (Shell Scripts + Screen Usage in Scripts provided)
 - Passwordless SSH-Connection between OF Controller Host and P4RCProbe Host for User openflow
